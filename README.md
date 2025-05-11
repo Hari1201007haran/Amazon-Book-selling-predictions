@@ -1,6 +1,6 @@
 # 📘 Amazon Book Selling Predictions
 
-Predicts Amazon book sales using historical bestseller data. Applies data preprocessing, label encoding, and a Decision Tree Regressor to estimate sales. Includes visualization, feature engineering, and new book prediction using encoded attributes.
+Predicts Amazon book sales using historical bestseller data. Applies preprocessing, label encoding, feature scaling, and multiple regression models (Decision Tree, Linear, Random Forest) to estimate synthetic sales values. Includes visualizations and predictions for new book entries.
 
 ## 📁 Dataset
 
@@ -9,13 +9,18 @@ Predicts Amazon book sales using historical bestseller data. Applies data prepro
 
 ## ⚙️ Features
 
-- Data cleaning and visualization
-- Label encoding (`Author`, `Genre`)
+- Data inspection and visualization (histograms, box plots, scatter plots)
+- Label encoding (`Author`, `Genre`) and ordinal encoding for new inputs
 - Feature scaling with `StandardScaler`
-- Synthetic `sales` column based on rating and reviews
-- Model training using `DecisionTreeRegressor`
-- Evaluation metrics: MAE, RMSE, R²
-- Sales prediction for new book entries
+- Synthetic `sales` column combining `Reviews`, `User Rating`, and randomness
+- Model training using:
+  - `DecisionTreeRegressor`
+  - `LinearRegression`
+  - `RandomForestRegressor`
+- Performance evaluation: MAE, RMSE, R²
+- Sales prediction for a new book (`Author: J.K. Rowling`, `Genre: Fiction`, etc.)
+- Repeated model training for robustness check
+- Statistical summaries and correlation analysis
 
 ## 🛠 Technologies Used
 
@@ -26,11 +31,19 @@ Predicts Amazon book sales using historical bestseller data. Applies data prepro
 
 ## 📊 Sample Output
 
+Decision Tree MAE: 54872.4
+Decision Tree RMSE: 78124.2
+Decision Tree R2: 66.25
 
-Decision Tree MAE: 53106.7
-Decision Tree RMSE: 77676.9
-Decision Tree R2: 67.48
-Predicted Sales for the new book: 143892
+Linear Regression MAE: 48621.1
+Linear Regression RMSE: 70234.3
+Linear Regression R2: 71.52
+
+Random Forest MAE: 46782.9
+Random Forest RMSE: 68891.5
+Random Forest R2: 72.74
+
+Predicted Sales for the new book: 152043
 
 
 ## 👤 Author
